@@ -19,10 +19,12 @@ header {
 
 .logo-container img, .itm-logo img {
     height: 50px;
+    margin-left: 50%;
 }
 
 .header-content {
     text-align: center;
+    margin-left: 10%;
 }
 
 .header-content h1, .header-content h2 {
