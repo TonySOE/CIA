@@ -175,6 +175,7 @@ footer {
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
+    margin-left: 50px;
 }
 
 .about h2 {
@@ -266,3 +267,56 @@ footer {
     width: 50px;
     height: auto;
 }
+        
+.evento {
+    margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;
+}
+@media (max-width: 360px) {
+    .header-content {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .header-content h1 {
+        font-size: 2rem; /* Tamaño adaptable */
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    
+    .header-content h2 {
+        font-size: 1.5rem;
+        margin: 5px 0;
+    }
+    nav{
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 10px; 
+        padding: 10px;
+        text-align: center;
+    }
+    .logo-container img, .itm-logo img {
+        height: 10px;
+        margin-left: 10%;
+    }
+    body {
+        font-size: 14px;
+    }
+
+    .top-section, .bottom-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel {
+        max-width: 100%;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+    .about{
+        margin-left: 80%;
+    }
+}
+
