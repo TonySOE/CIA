@@ -17,8 +17,7 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-.logo-container img,
-.itm-logo img {
+.logo-container img, .itm-logo img {
     height: 80px;
     margin-left: 50%;
 }
@@ -28,8 +27,7 @@ header {
     margin-left: 10%;
 }
 
-.header-content h1,
-.header-content h2 {
+.header-content h1, .header-content h2 {
     margin: 5px 0;
 }
 
@@ -37,18 +35,18 @@ nav a {
     margin: 0 10px;
     text-decoration: none;
     color: #333;
-    transition: all 0.15s ease;
+    transition: all 0.15s ease; 
 }
 
 nav a:hover {
-    color: #ff1493;
+    color: #ff1493; 
 }
 
 .language-switcher img {
     height: 30px;
     margin: 0 5px;
     padding-right: 10px;
-}
+}   
 
 main {
     width: 90%;
@@ -56,9 +54,9 @@ main {
     margin: 20px 0;
 }
 
-.titulo {
+.titulo{
     font-weight: bold;
-    color: #ff1493;
+    color: #ff1493; 
 }
 
 .top-section {
@@ -68,21 +66,134 @@ main {
     gap: 20px;
 }
 
-.carousel {
-    flex: 2;
-    overflow: hidden;
+.slide {
     position: relative;
-    max-width: 60%;
+    border-radius: 10px;
+    border: 1px solid #ddd; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 50%; /* Ancho del 50% del contenedor padre */
+    height: 50vh; /* Alto del 50% del viewport */
+    overflow: hidden; /* Evita que el contenido se desborde */
 }
 
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Ocupa todo el ancho del contenedor .slide */
+    height: 100%; /* Ocupa todo el alto del contenedor .slide */
+    display: flex; /* Usa flexbox para centrar las imágenes */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
 }
 
-.carousel-slide img {
+.slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+}
+
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.slide-item img {
+    display: block;
+    height: 100%; /* Ajusta el alto de la imagen al 100% del contenedor */
+    width: auto; /* Ajusta el ancho automáticamente para mantener la proporción */
+    max-width: 100%; /* Evita que la imagen se desborde horizontalmente */
+    object-fit: contain; /* Ajusta la imagen para que quepa dentro del contenedor sin recortarse */
+}
+
+.slide-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.slide-control.prev {
+    left: 2%;
+}
+
+.slide-control.next {
+    right: 2%;
+}
+
+.slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#slide-1:checked ~ .control-1,
+#slide-2:checked ~ .control-2,
+#slide-3:checked ~ .control-3 {
+    display: block;
+}
+
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.slide-circulo:hover {
+    color: #aaaaaa;
+}
+
+#slide-1:checked ~ .control-1 ~ .slide-indicador 
+     li:nth-child(1) .slide-circulo,
+#slide-2:checked ~ .control-2 ~ .slide-indicador 
+      li:nth-child(2) .slide-circulo,
+#slide-3:checked ~ .control-3 ~ .slide-indicador 
+      li:nth-child(3) .slide-circulo {
+    color: #428bca;
+}
+
+#titulo {
     width: 100%;
-    border-radius: 12px;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+         -1px 0px 2px rgba(255, 255, 255, 0);
 }
 
 .news {
@@ -94,9 +205,11 @@ main {
 
 .news article {
     background: #fff;
+    margin-bottom: 15px;
     padding: 15px;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd; 
 }
 
 .bottom-section {
@@ -110,7 +223,7 @@ main {
     padding: 20px;
     margin: 0 10px;
     background: #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
@@ -150,9 +263,10 @@ footer {
 
 .miembro {
     background: white;
+    border: 1px solid #ddd; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .miembro img {
@@ -177,7 +291,6 @@ footer {
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
-    margin-left: 50px;
 }
 
 .about h2 {
@@ -189,7 +302,8 @@ footer {
 
 .about-section {
     background: #fff;
-    border-radius: 12px;
+    border: 1px solid #ddd; 
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     margin-bottom: 20px;
@@ -202,8 +316,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.about-section p,
-.about-section ul {
+.about-section p, .about-section ul {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
@@ -218,7 +331,16 @@ footer {
     background: #f4f4f4;
     margin: 5px 0;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 10px;
+}
+
+.evento {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 20px; 
+    border: 1px solid #ddd; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos específicos de estilo_actividades.css */
@@ -235,120 +357,49 @@ footer {
 
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 .foto {
     background: white;
+    border: 1px solid #ddd; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
 }
 
 .foto img {
     max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: auto; 
+    border-radius: 10px; 
 }
 
 /* Estilos específicos de estilo_contacto.css */
-.contacto,
-.social {
+.contacto, .social {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.contacto img,
-.social img {
+.contacto img, .social img {
     width: 50px;
     height: auto;
 }
 
-.evento {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#menuicono {
-    display: none;
-    width: 95%;
-    height: 38px;
-}
-.title{
-    display: grid   ;
-}
-
-@media (max-width: 500px) {
-
-    .header-content {
-        text-align: center;
-        width: 100%;
-        display: none;
-        height: 100%;
-        padding: 0%;
-    }
-
-    .title h1 {
-        font-size: .7rem;
-        /* Tamaño adaptable */
-        font-weight: bold;
-        margin: 10px 0;
-    }
-
-    /* .title h2 {
-        font-size: 0.8rem;
-        margin: 5px 0;
-    } */
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .logo-container img,
-    .itm-logo img {
-        height: 3rem;
-        margin-left: 10%;
-    }
-
-    body {
-        font-size: 14px;
-    }
-
-    .top-section,
-    .bottom-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .carousel {
-        max-width: 100%;
-    }
-
-    .galeria {
-        grid-template-columns: 1fr;
-    }
-
-    .about {
-        margin-left: 10%;
-    }
-
-    #menuicono {
-        display: block;
-    }
+#redes, #comunicacion, #correo {
+    margin: 0 auto 20px;
+    max-width: 1000px;
+    padding: 20px; 
+    border: 1px 
+    solid #ddd; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
