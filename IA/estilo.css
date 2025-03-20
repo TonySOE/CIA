@@ -17,7 +17,8 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-.logo-container img, .itm-logo img {
+.logo-container img,
+.itm-logo img {
     height: 80px;
     margin-left: 50%;
 }
@@ -27,7 +28,8 @@ header {
     margin-left: 10%;
 }
 
-.header-content h1, .header-content h2 {
+.header-content h1,
+.header-content h2 {
     margin: 5px 0;
 }
 
@@ -35,18 +37,18 @@ nav a {
     margin: 0 10px;
     text-decoration: none;
     color: #333;
-    transition: all 0.15s ease; 
+    transition: all 0.15s ease;
 }
 
 nav a:hover {
-    color: #ff1493; 
+    color: #ff1493;
 }
 
 .language-switcher img {
     height: 30px;
     margin: 0 5px;
     padding-right: 10px;
-}   
+}
 
 main {
     width: 90%;
@@ -54,9 +56,9 @@ main {
     margin: 20px 0;
 }
 
-.titulo{
+.titulo {
     font-weight: bold;
-    color: #ff1493; 
+    color: #ff1493;
 }
 
 .top-section {
@@ -200,7 +202,8 @@ footer {
     margin-bottom: 10px;
 }
 
-.about-section p, .about-section ul {
+.about-section p,
+.about-section ul {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
@@ -232,11 +235,11 @@ footer {
 
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
-    max-width: 1200px; 
-    margin: 0 auto; 
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .foto {
@@ -245,65 +248,90 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 .foto img {
     max-width: 100%;
-    height: auto; 
-    border-radius: 10px; 
+    height: auto;
+    border-radius: 10px;
 }
 
 /* Estilos específicos de estilo_contacto.css */
-.contacto, .social {
+.contacto,
+.social {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.contacto img, .social img {
+.contacto img,
+.social img {
     width: 50px;
     height: auto;
 }
-        
+
 .evento {
-    margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
-@media (max-width: 360px) {
+
+#menuicono {
+    display: none;
+    width: 95%;
+    height: 38px;
+}
+.title{
+    display: grid   ;
+}
+
+@media (max-width: 500px) {
+
     .header-content {
         text-align: center;
         width: 100%;
+        display: none;
+        height: 100%;
+        padding: 0%;
     }
-    
-    .header-content h1 {
-        font-size: 2rem; /* Tamaño adaptable */
+
+    .title h1 {
+        font-size: .7rem;
+        /* Tamaño adaptable */
         font-weight: bold;
         margin: 10px 0;
     }
-    
-    .header-content h2 {
-        font-size: 1.5rem;
+
+    /* .title h2 {
+        font-size: 0.8rem;
         margin: 5px 0;
-    }
-    nav{
+    } */
+
+    nav {
         display: flex;
-        flex-wrap: wrap; 
-        justify-content: center; 
-        gap: 10px; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
         padding: 10px;
         text-align: center;
     }
-    .logo-container img, .itm-logo img {
-        height: 10px;
+
+    .logo-container img,
+    .itm-logo img {
+        height: 3rem;
         margin-left: 10%;
     }
+
     body {
         font-size: 14px;
     }
 
-    .top-section, .bottom-section {
+    .top-section,
+    .bottom-section {
         flex-direction: column;
         align-items: center;
     }
@@ -315,8 +343,12 @@ footer {
     .galeria {
         grid-template-columns: 1fr;
     }
-    .about{
-        margin-left: 80%;
+
+    .about {
+        margin-left: 10%;
+    }
+
+    #menuicono {
+        display: block;
     }
 }
-
